@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Command App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #bcc5ba;
+      --screen: #f5efe5;
+      --ink: #15231b;
+      --muted: #687167;
+      --accent: #1f6f56;
+      --accent-2: #c98d35;
+      --card: #fffaf0;
+      --nav-bg: rgba(255, 250, 240, 0.9);
+      --font: "Segoe UI Variable", "Segoe UI", sans-serif;
+    }
+
+    .finance-hero {
+      padding: 18px;
+      color: #f6f1e6;
+      background: #14261d;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .finance-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 56px;
+      background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 22px);
+    }
+
+    .finance-hero p {
+      color: rgba(246, 241, 230, 0.72);
+      max-width: 205px;
+    }
+
+    .balance-row {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 96px;
+      gap: 12px;
+      align-items: end;
+      position: relative;
+      z-index: 2;
+    }
+
+    .balance-row strong {
+      display: block;
+      font-size: 40px;
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .net-badge {
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      text-align: right;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .net-badge span {
+      display: block;
+      color: #f6c66a;
+      font-weight: 850;
+      font-size: 18px;
+    }
+
+    .cash-card {
+      margin-top: 10px;
+      padding: 13px;
+      display: grid;
+      grid-template-columns: 1fr 92px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cash-card .bars i:nth-child(1) { height: 38%; opacity: 0.36; }
+    .cash-card .bars i:nth-child(2) { height: 64%; opacity: 0.48; }
+    .cash-card .bars i:nth-child(3) { height: 46%; opacity: 0.68; }
+    .cash-card .bars i:nth-child(4) { height: 82%; }
+    .cash-card .bars i:nth-child(5) { height: 55%; opacity: 0.74; }
+    .cash-card .bars i:nth-child(6) { height: 70%; }
+    .cash-card .bars i:nth-child(7) { height: 33%; opacity: 0.42; }
+    .cash-card .bars i:nth-child(8) { height: 92%; background: var(--accent-2); }
+
+    .merchant {
+      font-weight: 850;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Finance Command mobile app screen">
+    <div class="status">
+      <span>9:41</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Monarch Ledger</p>
+          <h2>Cash runway</h2>
+        </div>
+        <button class="icon-button" aria-label="Open alerts">
+          <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        </button>
+      </header>
+
+      <section class="finance-hero section-title">
+        <div>
+          <p class="eyebrow">Available today</p>
+          <div class="balance-row">
+            <div>
+              <strong>$18,420</strong>
+              <p>May stays healthy if dining holds under $620.</p>
+            </div>
+            <div class="net-badge">
+              <p>Net</p>
+              <span>+8.4%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="metric-grid">
+        <article class="metric card"><span>Bills due</span><strong>$1,284</strong><p>3 autopays ready</p></article>
+        <article class="metric card"><span>Save pace</span><strong>$920</strong><p>On track Friday</p></article>
+      </div>
+
+      <article class="cash-card card">
+        <div>
+          <p class="eyebrow">Weekly flow</p>
+          <h3>Spend spike on Thu</h3>
+          <p>Coffee and rides are 18% above your normal range.</p>
+        </div>
+        <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </article>
+
+      <div class="section-title">
+        <h3>Needs review</h3>
+        <a href="#">See all</a>
+      </div>
+
+      <div class="list">
+        <article class="list-row">
+          <span class="avatar">BK</span>
+          <div><div class="merchant">Baker Street Market</div><p>Groceries - split category?</p></div>
+          <span class="value">-$84</span>
+        </article>
+        <article class="list-row">
+          <span class="avatar" style="background:#c98d35">LX</span>
+          <div><div class="merchant">Lynx Ride Pass</div><p>Subscription renews tomorrow</p></div>
+          <span class="value">-$29</span>
+        </article>
+      </div>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Home</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Cards</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Goals</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>More</span></button>
+    </nav>
+  </main>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fashion Wardrobe App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #c9c4bb;
+      --screen: #f6f1e8;
+      --ink: #171512;
+      --muted: #756f66;
+      --accent: #1f57a6;
+      --accent-2: #b0382a;
+      --card: #fffcf4;
+      --nav-bg: rgba(255, 252, 244, 0.91);
+      --font: "Didot", "Bodoni 72", Georgia, serif;
+    }
+
+    .look-card {
+      margin-top: 14px;
+      padding: 14px;
+      min-height: 298px;
+      position: relative;
+      overflow: hidden;
+      background: #171512;
+      color: #f6f1e8;
+    }
+
+    .look-card p {
+      color: rgba(246, 241, 232, 0.72);
+    }
+
+    .look-card > p {
+      max-width: 178px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .look-card h1 {
+      max-width: 176px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .model-block {
+      position: absolute;
+      right: 18px;
+      bottom: 0;
+      width: 132px;
+      height: 232px;
+      background:
+        linear-gradient(#f6f1e8 0 18%, transparent 18%),
+        linear-gradient(90deg, transparent 0 26%, #1f57a6 26% 74%, transparent 74%),
+        linear-gradient(#b0382a 0 44%, #171512 44% 100%);
+      border-radius: 66px 66px 0 0;
+      border: 1px solid rgba(246, 241, 232, 0.3);
+    }
+
+    .look-meta {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      width: 160px;
+      padding: 12px;
+      border: 1px solid rgba(246, 241, 232, 0.2);
+      border-radius: 8px;
+      background: rgba(246, 241, 232, 0.1);
+    }
+
+    .swatches {
+      display: flex;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .swatches i {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.55);
+    }
+
+    .wardrobe-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .piece {
+      height: 94px;
+      padding: 8px;
+      display: grid;
+      align-content: end;
+      background: linear-gradient(145deg, #fffcf4, #e9decf);
+    }
+
+    .piece b {
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Fashion Wardrobe mobile app screen">
+    <div class="status">
+      <span>17:09</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Wardrobe edit</p>
+          <h2>Tonight's look</h2>
+        </div>
+        <button class="icon-button" aria-label="Open camera scan">
+          <svg viewBox="0 0 24 24"><path d="M4 7h4l2-3h4l2 3h4v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+        </button>
+      </header>
+
+      <article class="look-card card">
+        <p class="eyebrow">Styled set</p>
+        <h1>Gallery dinner</h1>
+        <p>Structured jacket, cobalt trouser, low-gloss leather.</p>
+        <div class="look-meta">
+          <h3>Weather fit</h3>
+          <p>59 F, light wind</p>
+          <div class="swatches" aria-hidden="true"><i style="background:#171512"></i><i style="background:#1f57a6"></i><i style="background:#b0382a"></i><i style="background:#f6f1e8"></i></div>
+        </div>
+        <div class="model-block" aria-hidden="true"></div>
+      </article>
+
+      <div class="section-title">
+        <h3>Pull from closet</h3>
+        <a href="#">Swap</a>
+      </div>
+
+      <div class="wardrobe-grid">
+        <article class="piece card"><b>Cropped jacket</b><p>Ready</p></article>
+        <article class="piece card"><b>Cobalt trouser</b><p>Pressed</p></article>
+        <article class="piece card"><b>Square boot</b><p>Polish</p></article>
+      </div>
+
+      <article class="list-row" style="margin-top:10px">
+        <span class="avatar" style="background:#b0382a">AI</span>
+        <div><h3>One item to buy</h3><p>Thin silver belt completes the line.</p></div>
+        <span class="value">$48</span>
+      </article>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Looks</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Closet</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Shop</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Profile</span></button>
+    </nav>
+  </main>
+</body>
+</html>

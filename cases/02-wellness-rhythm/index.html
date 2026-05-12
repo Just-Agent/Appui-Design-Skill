@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wellness Rhythm App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #cdd7d0;
+      --screen: #fff8ec;
+      --ink: #243329;
+      --muted: #7d776d;
+      --accent: #267c70;
+      --accent-2: #e67e58;
+      --card: #fffdf7;
+      --nav-bg: rgba(255, 253, 247, 0.92);
+      --font: "Georgia", "Segoe UI", serif;
+    }
+
+    .mood-panel {
+      margin-top: 17px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(230, 126, 88, 0.24), transparent 58%),
+        #fffdf7;
+    }
+
+    .mood-ring {
+      width: 126px;
+      height: 126px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(var(--accent) 0 232deg, #eadfca 232deg 360deg);
+      position: relative;
+    }
+
+    .mood-ring::before {
+      content: "";
+      position: absolute;
+      inset: 13px;
+      border-radius: 50%;
+      background: var(--screen);
+      border: 1px solid rgba(36, 51, 41, 0.08);
+    }
+
+    .mood-ring strong {
+      position: relative;
+      font-size: 31px;
+      line-height: 1;
+    }
+
+    .breath-card {
+      margin-top: 12px;
+      padding: 14px;
+      background: #243329;
+      color: #fff8ec;
+    }
+
+    .breath-card p {
+      color: rgba(255, 248, 236, 0.72);
+    }
+
+    .breath-line {
+      margin-top: 14px;
+      height: 44px;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      align-items: center;
+      gap: 5px;
+    }
+
+    .breath-line i {
+      display: block;
+      height: 6px;
+      border-radius: 4px;
+      background: #fff8ec;
+      opacity: 0.42;
+    }
+
+    .breath-line i:nth-child(3),
+    .breath-line i:nth-child(4),
+    .breath-line i:nth-child(5) {
+      height: 34px;
+      opacity: 1;
+      background: #e67e58;
+    }
+
+    .habit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .habit {
+      padding: 10px;
+      min-height: 89px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .habit b {
+      font-size: 13px;
+    }
+
+    .habit span {
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Wellness Rhythm mobile app screen">
+    <div class="status">
+      <span>8:12</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Day 18 of 30</p>
+          <h2>Morning reset</h2>
+        </div>
+        <button class="icon-button" aria-label="Open journal">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 1-2-1.5Z"/><path d="M8 7h7M8 11h7M8 15h4"/></svg>
+        </button>
+      </header>
+
+      <article class="mood-panel card">
+        <div class="mood-ring"><strong>64</strong></div>
+        <div>
+          <p class="eyebrow">Mood score</p>
+          <h1>Steady, a bit tired</h1>
+          <p>Sleep debt is visible, but focus blocks are still protected.</p>
+        </div>
+      </article>
+
+      <article class="breath-card card">
+        <div class="spread">
+          <div>
+            <p class="eyebrow">2 min exercise</p>
+            <h3>Box breathing</h3>
+          </div>
+          <span class="value" style="color:#fff8ec">Start</span>
+        </div>
+        <div class="breath-line" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </article>
+
+      <div class="section-title">
+        <h3>Recovery habits</h3>
+        <a href="#">Edit</a>
+      </div>
+
+      <div class="habit-grid">
+        <article class="habit card"><b>Water</b><span>5/8</span><p>Cups</p></article>
+        <article class="habit card"><b>Walk</b><span>22m</span><p>Gentle pace</p></article>
+        <article class="habit card"><b>Screen</b><span>41m</span><p>Under limit</p></article>
+      </div>
+
+      <div class="section-title">
+        <h3>Next gentle nudge</h3>
+      </div>
+      <article class="list-row">
+        <span class="avatar" style="background:#e67e58">PM</span>
+        <div><h3>Pause before meetings</h3><p>3 quiet minutes scheduled at 1:20 PM.</p></div>
+        <span class="value">Today</span>
+      </article>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Today</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Sleep</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Journal</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Coach</span></button>
+    </nav>
+  </main>
+</body>
+</html>

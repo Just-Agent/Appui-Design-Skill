@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Energy App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #c6d1ce;
+      --screen: #eef3ea;
+      --ink: #17201d;
+      --muted: #65716b;
+      --accent: #4a8c35;
+      --accent-2: #e7c54a;
+      --card: #fbfff7;
+      --nav-bg: rgba(251, 255, 247, 0.9);
+      --font: "Bahnschrift", "Segoe UI", sans-serif;
+    }
+
+    .energy-hero {
+      margin-top: 14px;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .gauge {
+      width: 126px;
+      height: 126px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(#4a8c35 0 196deg, #e7c54a 196deg 254deg, rgba(23,32,29,.12) 254deg 360deg);
+      position: relative;
+    }
+
+    .gauge::before {
+      content: "";
+      position: absolute;
+      inset: 15px;
+      border-radius: 50%;
+      background: #fbfff7;
+    }
+
+    .gauge strong {
+      position: relative;
+      font-size: 28px;
+    }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    .room {
+      padding: 13px;
+      min-height: 104px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .room small {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .switch {
+      width: 50px;
+      height: 28px;
+      border-radius: 16px;
+      background: rgba(23,32,29,.14);
+      position: relative;
+    }
+
+    .switch::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      left: 3px;
+      top: 3px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 4px 9px rgba(0,0,0,.16);
+    }
+
+    .switch.on {
+      background: var(--accent);
+    }
+
+    .switch.on::before {
+      transform: translateX(22px);
+    }
+
+    .rate-card {
+      margin-top: 11px;
+      padding: 13px;
+      background: #17201d;
+      color: #eef3ea;
+    }
+
+    .rate-card p {
+      color: rgba(238, 243, 234, 0.72);
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Home Energy mobile app screen">
+    <div class="status">
+      <span>6:34</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Oak House</p>
+          <h2>Energy mode</h2>
+        </div>
+        <button class="icon-button" aria-label="Open device controls">
+          <svg viewBox="0 0 24 24"><path d="M4 8h16M7 8V4h10v4M6 8l1 12h10l1-12"/><path d="M10 12v4M14 12v4"/></svg>
+        </button>
+      </header>
+
+      <article class="energy-hero card">
+        <div class="gauge"><strong>2.4</strong></div>
+        <div>
+          <p class="eyebrow">kW now</p>
+          <h1>Low load</h1>
+          <p>Solar covers 71% of current household demand.</p>
+        </div>
+      </article>
+
+      <div class="section-title">
+        <h3>Rooms</h3>
+        <a href="#">Scenes</a>
+      </div>
+
+      <div class="room-grid">
+        <article class="room card">
+          <div class="spread"><h3>Kitchen</h3><span class="switch on" aria-hidden="true"></span></div>
+          <small>0.8 kW - kettle cooling</small>
+        </article>
+        <article class="room card">
+          <div class="spread"><h3>Office</h3><span class="switch" aria-hidden="true"></span></div>
+          <small>Idle until 9:00</small>
+        </article>
+        <article class="room card">
+          <div class="spread"><h3>Garage</h3><span class="switch on" aria-hidden="true"></span></div>
+          <small>EV charge 62%</small>
+        </article>
+        <article class="room card">
+          <div class="spread"><h3>Garden</h3><span class="switch" aria-hidden="true"></span></div>
+          <small>Watering paused</small>
+        </article>
+      </div>
+
+      <article class="rate-card card">
+        <div class="spread">
+          <div><p class="eyebrow">Grid price</p><h3>Cheap window starts 10 PM</h3></div>
+          <span class="value" style="color:#eef3ea">-$3.40</span>
+        </div>
+      </article>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Home</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Rooms</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Solar</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Rules</span></button>
+    </nav>
+  </main>
+</body>
+</html>

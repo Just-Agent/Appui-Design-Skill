@@ -1,0 +1,6 @@
+interface:
+  display_name: "App UI Design Skill"
+  short_description: "Design mobile app UI screens with source and screenshots."
+  default_prompt: "Use $appui-design-skill to design a mobile app UI screen set with screenshots and source code."
+policy:
+  allow_implicit_invocation: true

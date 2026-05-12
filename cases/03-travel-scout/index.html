@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Scout App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #c1c9c7;
+      --screen: #f7f1df;
+      --ink: #1a2728;
+      --muted: #6d746e;
+      --accent: #0d6b76;
+      --accent-2: #da6b3b;
+      --card: #fffaf0;
+      --nav-bg: rgba(255, 250, 240, 0.93);
+      --font: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    .route-card {
+      margin-top: 15px;
+      padding: 13px;
+      background: #1a2728;
+      color: #f7f1df;
+    }
+
+    .route-card p {
+      color: rgba(247, 241, 223, 0.7);
+    }
+
+    .map {
+      margin-top: 13px;
+      height: 176px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, transparent 0 38%, rgba(255,255,255,.16) 38% 41%, transparent 41%),
+        linear-gradient(35deg, transparent 0 52%, rgba(255,255,255,.13) 52% 55%, transparent 55%),
+        #304a47;
+    }
+
+    .map::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 2px dashed rgba(247, 241, 223, 0.45);
+      border-radius: 50%;
+      transform: rotate(-12deg);
+    }
+
+    .pin {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50% 50% 50% 0;
+      background: var(--accent-2);
+      transform: rotate(-45deg);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+    }
+
+    .pin.one { left: 62px; top: 74px; }
+    .pin.two { right: 68px; top: 36px; background: #f7f1df; }
+    .pin.three { right: 96px; bottom: 36px; background: #65b8a6; }
+
+    .trip-stats {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .trip-stats div {
+      padding: 10px;
+      border: 1px solid rgba(247, 241, 223, 0.18);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .trip-stats strong {
+      display: block;
+      color: #f7f1df;
+      font-size: 18px;
+    }
+
+    .itinerary {
+      display: grid;
+      gap: 8px;
+    }
+
+    .time {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Travel Scout mobile app screen">
+    <div class="status">
+      <span>10:26</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Lisbon / Day 2</p>
+          <h2>Alfama walk</h2>
+        </div>
+        <button class="icon-button" aria-label="Open saved places">
+          <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </header>
+
+      <article class="route-card card">
+        <div class="spread">
+          <div>
+            <p class="eyebrow">Route confidence</p>
+            <h1>92%</h1>
+          </div>
+          <span class="value" style="color:#f7f1df">Offline ready</span>
+        </div>
+        <div class="map" aria-hidden="true"><span class="pin one"></span><span class="pin two"></span><span class="pin three"></span></div>
+        <div class="trip-stats">
+          <div><strong>3.8k</strong><p>steps</p></div>
+          <div><strong>4</strong><p>stops</p></div>
+          <div><strong>54m</strong><p>walk</p></div>
+        </div>
+      </article>
+
+      <div class="chip-row" style="margin-top:12px">
+        <span class="chip active">Planned</span>
+        <span class="chip">Food</span>
+        <span class="chip">Views</span>
+        <span class="chip">Transit</span>
+      </div>
+
+      <div class="section-title">
+        <h3>Timeline</h3>
+        <a href="#">Map</a>
+      </div>
+
+      <div class="itinerary">
+        <article class="list-row">
+          <span class="avatar">01</span>
+          <div><h3>Miradouro lookout</h3><p>Best light before noon</p></div>
+          <span class="time">10:45</span>
+        </article>
+        <article class="list-row">
+          <span class="avatar" style="background:#da6b3b">02</span>
+          <div><h3>Tile workshop</h3><p>Tickets saved in wallet</p></div>
+          <span class="time">12:10</span>
+        </article>
+      </div>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Trip</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Map</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Wallet</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Notes</span></button>
+    </nav>
+  </main>
+</body>
+</html>

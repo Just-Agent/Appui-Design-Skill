@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Events App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #d1c9bd;
+      --screen: #fff3dc;
+      --ink: #241c18;
+      --muted: #7a6c5e;
+      --accent: #c73b2a;
+      --accent-2: #146a9a;
+      --card: #fff9ea;
+      --nav-bg: rgba(255, 249, 234, 0.92);
+      --font: "Rockwell", "Segoe UI", serif;
+    }
+
+    .poster {
+      margin-top: 14px;
+      min-height: 244px;
+      padding: 15px;
+      display: grid;
+      align-content: space-between;
+      color: #fff3dc;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.12) 0 1px, transparent 1px 30px),
+        #241c18;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -38px;
+      top: 36px;
+      border-radius: 50%;
+      border: 18px solid #c73b2a;
+      box-shadow: -48px 72px 0 -22px #146a9a;
+    }
+
+    .poster p {
+      color: rgba(255, 243, 220, 0.72);
+      max-width: 230px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .poster h1 {
+      max-width: 225px;
+      font-size: 42px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .date {
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.58);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .date.active {
+      background: var(--accent);
+      color: #fff3dc;
+      border-color: var(--accent);
+    }
+
+    .event-card {
+      padding: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 74px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .crowd {
+      display: flex;
+      margin-top: 11px;
+    }
+
+    .crowd span {
+      width: 28px;
+      height: 28px;
+      margin-right: -7px;
+      border: 2px solid #fff9ea;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    .crowd span:nth-child(2) { background: #e2b13c; }
+    .crowd span:nth-child(3) { background: var(--accent); }
+    .crowd span:nth-child(4) { background: #241c18; }
+
+    .rsvp {
+      height: 44px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--ink);
+      color: #fff3dc;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Social Events mobile app screen">
+    <div class="status">
+      <span>18:22</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Eastside this week</p>
+          <h2>Gather</h2>
+        </div>
+        <button class="icon-button" aria-label="Open search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </header>
+
+      <article class="poster card">
+        <div>
+          <p class="eyebrow">Tonight / 8 PM</p>
+          <h1>Rooftop vinyl market</h1>
+        </div>
+        <p>Twenty sellers, sunset DJ set, rain backup confirmed.</p>
+      </article>
+
+      <div class="date-row" aria-label="Date filter">
+        <span class="date">Tue<br>12</span>
+        <span class="date active">Wed<br>13</span>
+        <span class="date">Thu<br>14</span>
+        <span class="date">Fri<br>15</span>
+        <span class="date">Sat<br>16</span>
+      </div>
+
+      <div class="section-title">
+        <h3>Friends going</h3>
+        <a href="#">Invite</a>
+      </div>
+
+      <article class="event-card card">
+        <div>
+          <h3>Jazz book swap</h3>
+          <p>Basement Library - 6:30 PM</p>
+          <div class="crowd" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
+        <button class="rsvp">RSVP</button>
+      </article>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Events</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Map</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Saved</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Groups</span></button>
+    </nav>
+  </main>
+</body>
+</html>

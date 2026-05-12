@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Lab App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #ced7dc;
+      --screen: #f6f0da;
+      --ink: #172337;
+      --muted: #6d735f;
+      --accent: #1769aa;
+      --accent-2: #e0b43c;
+      --card: #fffaf0;
+      --nav-bg: rgba(255, 250, 240, 0.94);
+      --font: "Constantia", "Segoe UI", serif;
+    }
+
+    .course-hero {
+      margin-top: 15px;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 92px;
+      gap: 12px;
+      color: #f6f0da;
+      background: #172337;
+    }
+
+    .lesson-stack {
+      position: relative;
+      height: 140px;
+    }
+
+    .lesson-card {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(246, 240, 218, 0.28);
+      border-radius: 8px;
+      background: #234a69;
+      transform: rotate(-5deg);
+    }
+
+    .lesson-card:nth-child(2) {
+      inset: 12px 6px 0 -6px;
+      background: #e0b43c;
+      transform: rotate(4deg);
+    }
+
+    .lesson-card:nth-child(3) {
+      inset: 24px 2px 0 3px;
+      display: grid;
+      place-items: center;
+      background: #f6f0da;
+      color: #172337;
+      transform: rotate(0deg);
+      font-size: 28px;
+      font-weight: 950;
+    }
+
+    .streak-row {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 10px;
+    }
+
+    .streak-card {
+      padding: 13px;
+    }
+
+    .streak-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      margin-top: 13px;
+    }
+
+    .streak-days span {
+      height: 26px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: rgba(23, 105, 170, 0.12);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .streak-days span.done {
+      background: var(--accent);
+      color: #fffaf0;
+    }
+
+    .quiz-card {
+      padding: 13px;
+      background: #e0b43c;
+    }
+
+    .word {
+      margin-top: 9px;
+      font-size: 28px;
+      font-weight: 950;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Learning Lab mobile app screen">
+    <div class="status">
+      <span>7:45</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Japanese A2</p>
+          <h2>Today's lab</h2>
+        </div>
+        <button class="icon-button" aria-label="Open lesson notes">
+          <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg>
+        </button>
+      </header>
+
+      <article class="course-hero card">
+        <div>
+          <p class="eyebrow">Next lesson</p>
+          <h1>Polite requests</h1>
+          <p style="color:rgba(246,240,218,.72)">12 min audio, 8 cards, one speaking drill.</p>
+          <div class="progress" style="margin-top:18px;--progress:72%"><i></i></div>
+        </div>
+        <div class="lesson-stack" aria-hidden="true"><span class="lesson-card"></span><span class="lesson-card"></span><span class="lesson-card">A2</span></div>
+      </article>
+
+      <div class="streak-row">
+        <article class="streak-card card">
+          <p class="eyebrow">Streak</p>
+          <h3>9 days strong</h3>
+          <div class="streak-days"><span class="done">M</span><span class="done">T</span><span class="done">W</span><span>Th</span><span>F</span><span>S</span><span>S</span></div>
+        </article>
+        <article class="quiz-card card">
+          <p class="eyebrow">Review</p>
+          <div class="word">24</div>
+          <p style="color:#4c3a13">words due</p>
+        </article>
+      </div>
+
+      <div class="section-title">
+        <h3>Practice queue</h3>
+        <a href="#">Shuffle</a>
+      </div>
+
+      <div class="list">
+        <article class="list-row">
+          <span class="avatar">SP</span>
+          <div><h3>Speaking drill</h3><p>Order coffee politely</p></div>
+          <span class="value">4m</span>
+        </article>
+        <article class="list-row">
+          <span class="avatar" style="background:#e0b43c;color:#172337">RC</span>
+          <div><h3>Reading card</h3><p>Station announcement</p></div>
+          <span class="value">6m</span>
+        </article>
+      </div>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Lab</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Decks</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Speak</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Stats</span></button>
+    </nav>
+  </main>
+</body>
+</html>

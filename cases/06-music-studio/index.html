@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Studio App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #c8c2cc;
+      --screen: #f2ece7;
+      --ink: #161319;
+      --muted: #756f77;
+      --accent: #c13255;
+      --accent-2: #326d7d;
+      --card: #fff8f0;
+      --nav-bg: rgba(255, 248, 240, 0.9);
+      --font: "Franklin Gothic Medium", "Segoe UI", sans-serif;
+    }
+
+    .album {
+      margin-top: 14px;
+      height: 266px;
+      padding: 15px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(45deg, transparent 0 39%, rgba(255,255,255,.14) 39% 42%, transparent 42%),
+        #161319;
+      color: #f2ece7;
+    }
+
+    .album::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -28px;
+      bottom: -22px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, #161319 0 24px, #f2ece7 25px 29px, transparent 30px),
+        repeating-radial-gradient(circle, #c13255 0 10px, #326d7d 10px 18px, #e7b94b 18px 26px);
+      box-shadow: -20px 12px 34px rgba(0,0,0,.32);
+    }
+
+    .album p {
+      color: rgba(242, 236, 231, 0.72);
+    }
+
+    .wave {
+      position: absolute;
+      left: 15px;
+      right: 150px;
+      bottom: 19px;
+      height: 78px;
+      display: grid;
+      grid-template-columns: repeat(18, 1fr);
+      gap: 3px;
+      align-items: center;
+    }
+
+    .wave i {
+      display: block;
+      min-height: 10px;
+      border-radius: 4px;
+      background: #f2ece7;
+      opacity: 0.76;
+    }
+
+    .wave i:nth-child(3n) { height: 56px; background:#c13255; opacity:1; }
+    .wave i:nth-child(4n) { height: 38px; background:#e7b94b; opacity:1; }
+    .wave i:nth-child(5n) { height: 70px; background:#326d7d; opacity:1; }
+
+    .player {
+      margin-top: 11px;
+      padding: 13px;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr) 52px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .play {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--accent);
+      color: #fff8f0;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .mix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .mix {
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Music Studio mobile app screen">
+    <div class="status">
+      <span>21:18</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Studio room</p>
+          <h2>Late set</h2>
+        </div>
+        <button class="icon-button" aria-label="Open mixer">
+          <svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M2 14h4M10 8h4M18 16h4"/></svg>
+        </button>
+      </header>
+
+      <article class="album card">
+        <p class="eyebrow">Now playing</p>
+        <h1>Neon Harbor</h1>
+        <p>Aria Vale - live master</p>
+        <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </article>
+
+      <article class="player card">
+        <button class="play" aria-label="Pause">II</button>
+        <div>
+          <div class="spread"><h3>1:42</h3><span class="value">3:58</span></div>
+          <div class="progress" style="margin-top:10px;--progress:43%"><i></i></div>
+        </div>
+        <button class="icon-button" aria-label="Like track">
+          <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </button>
+      </article>
+
+      <div class="section-title">
+        <h3>Quick mix</h3>
+        <a href="#">Save</a>
+      </div>
+
+      <div class="mix-grid">
+        <article class="mix card"><p class="eyebrow">Bass</p><h3>Warm +2</h3><div class="progress" style="margin-top:12px;--progress:68%"><i></i></div></article>
+        <article class="mix card"><p class="eyebrow">Vocal</p><h3>Air +4</h3><div class="progress" style="margin-top:12px;--progress:82%"><i></i></div></article>
+      </div>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Play</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Library</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Studio</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Live</span></button>
+    </nav>
+  </main>
+</body>
+</html>

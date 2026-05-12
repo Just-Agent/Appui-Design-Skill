@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Companion App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #c7d4d7;
+      --screen: #f7fbf8;
+      --ink: #163032;
+      --muted: #607474;
+      --accent: #247d74;
+      --accent-2: #d76f45;
+      --card: #ffffff;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --font: "Segoe UI", "Helvetica Neue", sans-serif;
+    }
+
+    .care-hero {
+      margin-top: 14px;
+      padding: 15px;
+      background: #163032;
+      color: #f7fbf8;
+    }
+
+    .care-hero p {
+      color: rgba(247, 251, 248, 0.72);
+    }
+
+    .vitals {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .vital {
+      padding: 10px;
+      border: 1px solid rgba(247, 251, 248, 0.18);
+      border-radius: 8px;
+      background: rgba(247, 251, 248, 0.08);
+    }
+
+    .vital strong {
+      display: block;
+      color: #f7fbf8;
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .dose-card {
+      margin-top: 11px;
+      padding: 14px;
+      display: grid;
+      grid-template-columns: 66px minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .pillbox {
+      width: 66px;
+      height: 54px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #e7f1ef;
+    }
+
+    .pillbox span {
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .pillbox span:nth-child(3) {
+      background: var(--accent-2);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 9px;
+    }
+
+    .timeline .list-row {
+      grid-template-columns: 55px minmax(0, 1fr) auto;
+    }
+
+    .date-badge {
+      height: 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(36,125,116,.13);
+      color: var(--accent);
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Medical Companion mobile app screen">
+    <div class="status">
+      <span>9:08</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Care plan</p>
+          <h2>Good morning, Ana</h2>
+        </div>
+        <button class="icon-button" aria-label="Open care team messages">
+          <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+        </button>
+      </header>
+
+      <article class="care-hero card">
+        <div class="spread">
+          <div>
+            <p class="eyebrow">Next check</p>
+            <h1>10:30 AM</h1>
+          </div>
+          <span class="value" style="color:#f7fbf8">Televisit</span>
+        </div>
+        <p style="margin-top:8px">Bring blood pressure log and symptom notes.</p>
+        <div class="vitals">
+          <div class="vital"><strong>118/76</strong><p>BP</p></div>
+          <div class="vital"><strong>72</strong><p>Pulse</p></div>
+          <div class="vital"><strong>97%</strong><p>O2</p></div>
+        </div>
+      </article>
+
+      <article class="dose-card card">
+        <div class="pillbox" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div><p class="eyebrow">Medication</p><h3>Vitamin D after breakfast</h3><p>Marked safe with food.</p></div>
+        <span class="value">Due</span>
+      </article>
+
+      <div class="section-title">
+        <h3>Care timeline</h3>
+        <a href="#">Share</a>
+      </div>
+
+      <div class="timeline">
+        <article class="list-row">
+          <span class="date-badge">Fri</span>
+          <div><h3>Lab result uploaded</h3><p>Doctor reviewed at 8:04 AM.</p></div>
+          <span class="value">New</span>
+        </article>
+        <article class="list-row">
+          <span class="date-badge">Mon</span>
+          <div><h3>Physical therapy</h3><p>Bring resistance band.</p></div>
+          <span class="value">2:00</span>
+        </article>
+      </div>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Today</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Meds</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Team</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Records</span></button>
+    </nav>
+  </main>
+</body>
+</html>

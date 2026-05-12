@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Market App UI</title>
+  <link rel="stylesheet" href="../shared/app-ui.css">
+  <style>
+    :root {
+      --page-bg: #d0d3bd;
+      --screen: #fff9e8;
+      --ink: #2d2419;
+      --muted: #806f5d;
+      --accent: #2f7b42;
+      --accent-2: #d94e2f;
+      --card: #fffdf3;
+      --nav-bg: rgba(255, 253, 243, 0.92);
+      --font: "Verdana", "Segoe UI", sans-serif;
+    }
+
+    .search {
+      margin-top: 14px;
+      height: 46px;
+      display: grid;
+      grid-template-columns: 34px 1fr 34px;
+      gap: 6px;
+      align-items: center;
+      padding: 0 11px;
+    }
+
+    .hero-dish {
+      margin-top: 12px;
+      padding: 14px;
+      min-height: 214px;
+      position: relative;
+      overflow: hidden;
+      background: #2d2419;
+      color: #fff9e8;
+    }
+
+    .hero-dish p {
+      color: rgba(255, 249, 232, 0.72);
+      max-width: 170px;
+    }
+
+    .plate {
+      position: absolute;
+      right: -26px;
+      bottom: -38px;
+      width: 184px;
+      height: 184px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, #fff9e8 0 24%, transparent 25%),
+        conic-gradient(#e8ad53 0 60deg, #2f7b42 60deg 115deg, #d94e2f 115deg 190deg, #f7d790 190deg 260deg, #7e3f2c 260deg 360deg);
+      border: 12px solid #fff9e8;
+      box-shadow: -12px 16px 30px rgba(0, 0, 0, 0.26);
+    }
+
+    .price-pill {
+      margin-top: 20px;
+      width: max-content;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #fff9e8;
+      color: #2d2419;
+      font-weight: 900;
+    }
+
+    .dish-row {
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr) auto;
+      gap: 11px;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .dish-thumb {
+      width: 68px;
+      height: 58px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 70% 25%, #fff9e8 0 8px, transparent 9px),
+        linear-gradient(135deg, var(--accent-2), #e8ad53);
+    }
+
+    .cart-strip {
+      margin-top: 10px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--accent);
+      color: #fff9e8;
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="Food Market mobile app screen">
+    <div class="status">
+      <span>12:03</span>
+      <span class="status-icons"><span class="signal"></span><span class="wifi"></span><span class="battery"></span></span>
+    </div>
+
+    <section class="app">
+      <header class="topline">
+        <div>
+          <p class="eyebrow">Deliver to</p>
+          <h2>North Pier</h2>
+        </div>
+        <button class="icon-button" aria-label="Open cart">
+          <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 8h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+        </button>
+      </header>
+
+      <label class="search card">
+        <svg class="tiny-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input aria-label="Search restaurants" value="spicy lunch bowls" readonly style="border:0;background:transparent;color:var(--ink);min-width:0">
+        <svg class="tiny-icon" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg>
+      </label>
+
+      <div class="chip-row" style="margin-top:10px">
+        <span class="chip active">Fast</span>
+        <span class="chip">Bowls</span>
+        <span class="chip">Vegan</span>
+        <span class="chip">Deals</span>
+      </div>
+
+      <article class="hero-dish card">
+        <p class="eyebrow">Chef pick</p>
+        <h1>Fire noodle bowl</h1>
+        <p>Charred corn, sesame greens, and crispy shallot crunch.</p>
+        <div class="price-pill">$13.40 - 18 min</div>
+        <div class="plate" aria-hidden="true"></div>
+      </article>
+
+      <div class="section-title">
+        <h3>Nearby favorites</h3>
+        <a href="#">Filter</a>
+      </div>
+
+      <article class="dish-row card">
+        <div class="dish-thumb"></div>
+        <div><h3>Miso Pepper Rice</h3><p>4.8 rating - 11 min away</p></div>
+        <span class="value">$11</span>
+      </article>
+
+      <article class="cart-strip card">
+        <div><h3>2 items in cart</h3><p style="color:rgba(255,249,232,.72)">Arrives 12:25</p></div>
+        <span class="value" style="color:#fff9e8">$24.80</span>
+      </article>
+    </section>
+
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active"><span class="nav-mark"></span><span>Eat</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Grocery</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Orders</span></button>
+      <button class="tab"><span class="nav-mark"></span><span>Account</span></button>
+    </nav>
+  </main>
+</body>
+</html>
