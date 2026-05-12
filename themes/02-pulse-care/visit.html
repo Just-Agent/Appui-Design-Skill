@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pulse Care Visit</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#c5d4d8; --screen:#f6fbf8; --ink:#153134; --muted:#637777; --accent:#247a73; --accent-2:#d8764d; --card:#ffffff; --nav:rgba(255,255,255,.92); --font:"Segoe UI","Helvetica Neue",sans-serif; }
+    .visit { min-height:220px; display:grid; align-content:space-between; }
+    .doctor { display:flex; gap:10px; align-items:center; }
+    .doctor .mark { background:#d8764d; }
+    .prep { padding:12px; }
+    .prep .progress { margin-top:11px; }
+    .note { min-height:78px; padding:12px; background:#e8f1f0; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>8:31</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Pulse Care</p><h2>Next visit</h2></div><button class="icon-btn" aria-label="Calendar"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg></button></header>
+      <article class="hero visit card"><div><p class="eyebrow">Televisit starts</p><h1>10:30 AM</h1><p>Link opens 10 minutes before appointment.</p></div><div class="doctor"><span class="mark">SP</span><div><h3>Dr. Sofia Patel</h3><p>Cardiology follow-up</p></div></div></article>
+      <div class="section"><h3>Before you join</h3><a href="#">Share</a></div>
+      <div class="grid-2">
+        <article class="prep card"><p class="eyebrow">Checklist</p><h3>3 of 4 ready</h3><div class="progress" style="--p:75%"><i></i></div></article>
+        <article class="prep card"><p class="eyebrow">Vitals log</p><h3>Uploaded</h3><p>8 readings</p></article>
+      </div>
+      <article class="note card" style="margin-top:11px"><p class="eyebrow">Question to ask</p><h3>Can evening walks replace one rehab session this week?</h3></article>
+      <article class="row card" style="margin-top:11px"><span class="mark">ID</span><div><h3>Insurance card verified</h3><p>No copay due today.</p></div><span class="value">Ready</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Today</span></button><button class="tab"><i></i><span>Meds</span></button><button class="tab active"><i></i><span>Visits</span></button><button class="tab"><i></i><span>Records</span></button></nav>
+  </main>
+</body>
+</html>

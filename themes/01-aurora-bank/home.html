@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurora Bank Home</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#bdc8c0; --screen:#f5efe3; --ink:#11231c; --muted:#677066; --accent:#167a5a; --accent-2:#d49a37; --card:#fffaf0; --nav:rgba(255,250,240,.92); --font:"Segoe UI Variable","Segoe UI",sans-serif; }
+    .balance { min-height: 214px; background:#11231c; }
+    .balance::after { content:""; position:absolute; right:-44px; bottom:-46px; width:182px; height:182px; border:18px solid #d49a37; transform:rotate(12deg); }
+    .balance strong { display:block; margin-top:16px; font-size:44px; line-height:.88; position:relative; z-index:2; }
+    .quick { margin-top:12px; }
+    .quick .card { padding:12px; min-height:84px; }
+    .quick b { display:block; margin-top:10px; }
+    .spend { margin-top:11px; padding:13px; display:grid; grid-template-columns:1fr 104px; gap:12px; align-items:center; }
+    .bars i:nth-child(1){height:30%;opacity:.42}.bars i:nth-child(2){height:54%;opacity:.55}.bars i:nth-child(3){height:44%;opacity:.65}.bars i:nth-child(4){height:76%}.bars i:nth-child(5){height:58%}.bars i:nth-child(6){height:86%;background:var(--accent-2)}.bars i:nth-child(7){height:45%}.bars i:nth-child(8){height:68%}
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>9:41</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Aurora Bank</p><h2>Daily money</h2></div><button class="icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></button></header>
+      <article class="hero balance card"><p class="eyebrow">Available balance</p><strong>$24,860</strong><p>Payroll landed and two bills are ready to confirm.</p></article>
+      <div class="grid-3 quick">
+        <article class="card metric"><span>Cards</span><b>Freeze</b></article>
+        <article class="card metric"><span>Move</span><b>Transfer</b></article>
+        <article class="card metric"><span>Vault</span><b>Save</b></article>
+      </div>
+      <article class="spend card"><div><p class="eyebrow">Weekly spend</p><h3>Dining is up 14%</h3><p>Still below your Friday guardrail.</p></div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      <div class="section"><h3>Recent movement</h3><a href="#">View</a></div>
+      <article class="row card"><span class="mark">AT</span><div><h3>Atlas Grocery</h3><p>Food and home</p></div><span class="value">-$74</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab active"><i></i><span>Home</span></button><button class="tab"><i></i><span>Pay</span></button><button class="tab"><i></i><span>Insights</span></button><button class="tab"><i></i><span>Cards</span></button></nav>
+  </main>
+</body>
+</html>

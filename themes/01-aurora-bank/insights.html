@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurora Bank Insights</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#bdc8c0; --screen:#f5efe3; --ink:#11231c; --muted:#677066; --accent:#167a5a; --accent-2:#d49a37; --card:#fffaf0; --nav:rgba(255,250,240,.92); --font:"Segoe UI Variable","Segoe UI",sans-serif; }
+    .score { min-height:208px; display:grid; grid-template-columns:128px 1fr; gap:14px; align-items:center; }
+    .ring { width:126px; height:126px; border-radius:50%; display:grid; place-items:center; background:conic-gradient(var(--accent) 0 278deg, rgba(255,255,255,.18) 278deg); position:relative; }
+    .ring::after { content:""; position:absolute; inset:14px; border-radius:50%; background:#11231c; }
+    .ring strong { position:relative; z-index:2; font-size:32px; color:#f5efe3; }
+    .category { padding:12px; }
+    .category .progress { margin-top:11px; }
+    .bars i:nth-child(1){height:44%;opacity:.48}.bars i:nth-child(2){height:52%;opacity:.58}.bars i:nth-child(3){height:80%}.bars i:nth-child(4){height:63%}.bars i:nth-child(5){height:88%;background:var(--accent-2)}.bars i:nth-child(6){height:56%}.bars i:nth-child(7){height:46%}.bars i:nth-child(8){height:71%}
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>9:43</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Aurora Bank</p><h2>Insights</h2></div><button class="icon-btn" aria-label="Filter"><svg viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg></button></header>
+      <article class="hero score card"><div class="ring"><strong>78</strong></div><div><p class="eyebrow">Money health</p><h1>Strong month</h1><p>Subscriptions dropped and emergency savings improved.</p></div></article>
+      <div class="section"><h3>Category forecast</h3><a href="#">Budget</a></div>
+      <div class="grid-2">
+        <article class="category card"><p class="eyebrow">Dining</p><h3>$412 of $620</h3><div class="progress" style="--p:66%"><i></i></div></article>
+        <article class="category card"><p class="eyebrow">Travel</p><h3>$180 of $400</h3><div class="progress" style="--p:45%"><i></i></div></article>
+      </div>
+      <article class="card" style="margin-top:11px;padding:13px;display:grid;grid-template-columns:1fr 118px;gap:12px;align-items:center"><div><p class="eyebrow">Cash rhythm</p><h3>Peak spend Thursday</h3><p>Move grocery run to Sunday to smooth the curve.</p></div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="row card" style="margin-top:11px"><span class="mark">AI</span><div><h3>Cancel duplicate storage</h3><p>Two cloud plans overlap.</p></div><span class="value">Save $9</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Home</span></button><button class="tab"><i></i><span>Pay</span></button><button class="tab active"><i></i><span>Insights</span></button><button class="tab"><i></i><span>Cards</span></button></nav>
+  </main>
+</body>
+</html>

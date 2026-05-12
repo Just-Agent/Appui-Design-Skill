@@ -5,6 +5,8 @@ import path from "node:path";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const casesDir = path.join(root, "cases");
 const previewsDir = path.join(root, "assets", "previews");
+const themesDir = path.join(root, "themes");
+const themePreviewsDir = path.join(root, "assets", "theme-previews");
 
 function readPngSize(file) {
   const buffer = readFileSync(file);
@@ -25,6 +27,7 @@ const cases = readdirSync(casesDir)
   .sort();
 
 const errors = [];
+let verifiedPreviews = 0;
 
 if (cases.length !== 10) {
   errors.push(`Expected 10 cases, found ${cases.length}`);
@@ -51,8 +54,60 @@ for (const caseName of cases) {
     if (size.bytes < 12000) {
       errors.push(`${path.relative(root, preview)} looks too small to be a meaningful screenshot`);
     }
+    verifiedPreviews += 1;
   } catch (error) {
     errors.push(error.message);
+  }
+}
+
+if (!existsSync(themesDir)) {
+  errors.push("Missing themes directory");
+} else {
+  const themes = readdirSync(themesDir)
+    .filter((entry) => statSync(path.join(themesDir, entry)).isDirectory())
+    .filter((entry) => /^\d{2}-/.test(entry))
+    .sort();
+
+  if (themes.length !== 5) {
+    errors.push(`Expected 5 multi-screen themes, found ${themes.length}`);
+  }
+
+  for (const themeName of themes) {
+    const screenFiles = readdirSync(path.join(themesDir, themeName))
+      .filter((entry) => entry.endsWith(".html"))
+      .sort();
+
+    if (screenFiles.length < 3) {
+      errors.push(`${themeName} should include at least 3 UI screens, found ${screenFiles.length}`);
+    }
+
+    for (const screenFile of screenFiles) {
+      const screenName = path.basename(screenFile, ".html");
+      const source = path.join(themesDir, themeName, screenFile);
+      const preview = path.join(themePreviewsDir, `${themeName}-${screenName}.png`);
+
+      if (!existsSync(source)) {
+        errors.push(`Missing theme source: ${path.relative(root, source)}`);
+      }
+
+      if (!existsSync(preview)) {
+        errors.push(`Missing theme preview: ${path.relative(root, preview)}`);
+        continue;
+      }
+
+      try {
+        const size = readPngSize(preview);
+        if (size.width !== 430 || size.height !== 932) {
+          errors.push(`${path.relative(root, preview)} is ${size.width}x${size.height}, expected 430x932`);
+        }
+        if (size.bytes < 12000) {
+          errors.push(`${path.relative(root, preview)} looks too small to be a meaningful screenshot`);
+        }
+        verifiedPreviews += 1;
+      } catch (error) {
+        errors.push(error.message);
+      }
+    }
   }
 }
 
@@ -61,4 +116,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`Verified ${cases.length} cases with matching PNG previews.`);
+console.log(`Verified ${cases.length} cases and ${verifiedPreviews - cases.length} theme screens with matching PNG previews.`);

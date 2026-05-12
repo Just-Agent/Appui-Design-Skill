@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nomad Trip Discover</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#c2cac8; --screen:#f8f0de; --ink:#19282a; --muted:#6d746c; --accent:#0d6b76; --accent-2:#da6b3b; --card:#fffaf0; --nav:rgba(255,250,240,.92); --font:"Trebuchet MS","Segoe UI",sans-serif; }
+    .maphero { min-height:246px; background:#19282a; }
+    .maphero::before { content:""; position:absolute; inset:58px 22px 20px; border:2px dashed rgba(248,240,222,.42); border-radius:50%; transform:rotate(-12deg); }
+    .pin { position:absolute; width:18px; height:18px; border-radius:50% 50% 50% 0; background:var(--accent-2); transform:rotate(-45deg); }
+    .pin.a{right:82px;top:92px}.pin.b{left:68px;bottom:58px;background:#f8f0de}.pin.c{right:118px;bottom:42px;background:#70b8a7}
+    .search { margin-top:12px; height:46px; padding:0 12px; display:grid; grid-template-columns:24px 1fr 24px; gap:8px; align-items:center; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>10:15</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Nomad Trip</p><h2>Lisbon scout</h2></div><button class="icon-btn" aria-label="Saved"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button></header>
+      <label class="search card"><svg class="tiny" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input value="quiet places near Alfama" readonly aria-label="Search" style="border:0;background:transparent;min-width:0;color:var(--ink)"><svg class="tiny" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg></label>
+      <article class="hero maphero card"><p class="eyebrow">Found route</p><h1>Tile shops and sunset views</h1><p>Four stops, low hills, cafe break included.</p><i class="pin a"></i><i class="pin b"></i><i class="pin c"></i></article>
+      <div class="chips" style="margin-top:12px"><span class="chip active">Local</span><span class="chip">Food</span><span class="chip">Views</span><span class="chip">Rain safe</span></div>
+      <div class="section"><h3>Recommended</h3><a href="#">Map</a></div>
+      <article class="row card"><span class="mark">01</span><div><h3>Fado archive cafe</h3><p>12 min walk - quiet before noon</p></div><span class="value">Save</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab active"><i></i><span>Discover</span></button><button class="tab"><i></i><span>Plan</span></button><button class="tab"><i></i><span>Passes</span></button><button class="tab"><i></i><span>Notes</span></button></nav>
+  </main>
+</body>
+</html>

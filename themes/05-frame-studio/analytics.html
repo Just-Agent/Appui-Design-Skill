@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frame Studio Analytics</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#c8c2cc; --screen:#f2ece7; --ink:#161319; --muted:#756f77; --accent:#c13255; --accent-2:#326d7d; --card:#fff8f0; --nav:rgba(255,248,240,.9); --font:"Franklin Gothic Medium","Segoe UI",sans-serif; }
+    .reach { padding:15px; background:#161319; color:#f2ece7; }
+    .reach strong { display:block; font-size:44px; line-height:1; margin-top:12px; }
+    .reach p { color:rgba(242,236,231,.72); }
+    .chart { margin-top:14px; height:104px; display:grid; grid-template-columns:repeat(9,1fr); gap:6px; align-items:end; }
+    .chart i { border-radius:4px 4px 0 0; background:#c13255; min-height:18px; }
+    .chart i:nth-child(1){height:34%}.chart i:nth-child(2){height:44%}.chart i:nth-child(3){height:56%}.chart i:nth-child(4){height:52%;background:#326d7d}.chart i:nth-child(5){height:80%;background:#e4b54a}.chart i:nth-child(6){height:68%}.chart i:nth-child(7){height:88%}.chart i:nth-child(8){height:64%;background:#326d7d}.chart i:nth-child(9){height:74%}
+    .metric .progress { margin-top:11px; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>21:22</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Frame Studio</p><h2>Campaign stats</h2></div><button class="icon-btn" aria-label="Share report"><svg viewBox="0 0 24 24"><path d="M4 12v8h16v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg></button></header>
+      <article class="reach card"><p class="eyebrow">7 day reach</p><strong>128K</strong><p>Launch teaser is outperforming baseline by 31%.</p><div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      <div class="section"><h3>Signals</h3><a href="#">Export</a></div>
+      <div class="grid-2">
+        <article class="metric card"><span>Save rate</span><strong>12.4%</strong><div class="progress" style="--p:72%"><i></i></div></article>
+        <article class="metric card"><span>Comments</span><strong>842</strong><div class="progress" style="--p:58%"><i></i></div></article>
+      </div>
+      <article class="row card" style="margin-top:11px"><span class="mark">AI</span><div><h3>Post at 7:40 PM</h3><p>Audience overlap peaks tonight.</p></div><span class="value">Queue</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Work</span></button><button class="tab"><i></i><span>Edit</span></button><button class="tab"><i></i><span>Assets</span></button><button class="tab active"><i></i><span>Stats</span></button></nav>
+  </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nomad Trip Pass</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#c2cac8; --screen:#f8f0de; --ink:#19282a; --muted:#6d746c; --accent:#0d6b76; --accent-2:#da6b3b; --card:#fffaf0; --nav:rgba(255,250,240,.92); --font:"Trebuchet MS","Segoe UI",sans-serif; }
+    .ticket { min-height:250px; display:grid; align-content:space-between; background:#19282a; color:#f8f0de; }
+    .ticket::after { content:""; position:absolute; left:18px; right:18px; bottom:86px; border-top:2px dashed rgba(248,240,222,.32); }
+    .qr { width:96px; height:96px; display:grid; grid-template-columns:repeat(5,1fr); gap:4px; padding:8px; background:#f8f0de; border-radius:8px; }
+    .qr i { background:#19282a; border-radius:2px; }
+    .qr i:nth-child(2n){opacity:.35}.qr i:nth-child(5n){opacity:1;background:#da6b3b}
+    .ticket-bottom { display:flex; justify-content:space-between; align-items:end; position:relative; z-index:2; }
+    .wallet { padding:12px; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>10:22</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Nomad Trip</p><h2>Wallet pass</h2></div><button class="icon-btn" aria-label="Download pass"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></button></header>
+      <article class="hero ticket card"><div><p class="eyebrow">Tile workshop</p><h1>Entry at 12:10</h1><p>Show code at Rua dos Remedios 84.</p></div><div class="ticket-bottom"><div><h3>2 guests</h3><p>Refundable until 11:30</p></div><div class="qr" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></article>
+      <div class="section"><h3>Saved passes</h3><a href="#">Add</a></div>
+      <div class="grid-2">
+        <article class="wallet card"><p class="eyebrow">Transit</p><h3>24h metro pass</h3><p>Expires 9:04 PM</p></article>
+        <article class="wallet card"><p class="eyebrow">Dinner</p><h3>Table for 2</h3><p>Confirmed 7:30</p></article>
+      </div>
+      <article class="row card" style="margin-top:11px"><span class="mark">ID</span><div><h3>Passport copy stored</h3><p>Available offline.</p></div><span class="value">Secure</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Discover</span></button><button class="tab"><i></i><span>Plan</span></button><button class="tab active"><i></i><span>Passes</span></button><button class="tab"><i></i><span>Notes</span></button></nav>
+  </main>
+</body>
+</html>

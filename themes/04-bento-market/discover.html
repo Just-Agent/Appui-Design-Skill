@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bento Market Discover</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#d1d3bd; --screen:#fff8e8; --ink:#2b2319; --muted:#7c6d5b; --accent:#307943; --accent-2:#d94e2f; --card:#fffdf3; --nav:rgba(255,253,243,.92); --font:"Verdana","Segoe UI",sans-serif; }
+    .search { margin-top:12px; height:46px; padding:0 12px; display:grid; grid-template-columns:24px 1fr 24px; gap:8px; align-items:center; }
+    .feature { min-height:238px; background:#2b2319; }
+    .feature::after { content:""; position:absolute; right:-34px; bottom:-46px; width:180px; height:180px; border-radius:50%; border:12px solid #fff8e8; background:conic-gradient(#d94e2f 0 88deg,#e5b24f 88deg 168deg,#307943 168deg 252deg,#7d3e2a 252deg); box-shadow:-16px 18px 28px rgba(0,0,0,.24); }
+    .price { margin-top:18px; width:max-content; padding:10px 12px; border-radius:8px; background:#fff8e8; color:#2b2319; font-weight:900; position:relative; z-index:2; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>12:01</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Bento Market</p><h2>Lunch nearby</h2></div><button class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 8h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></button></header>
+      <label class="search card"><svg class="tiny" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input value="spicy bowls" readonly aria-label="Search food" style="border:0;background:transparent;min-width:0;color:var(--ink)"><svg class="tiny" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg></label>
+      <div class="chips" style="margin-top:10px"><span class="chip active">Fast</span><span class="chip">Bowls</span><span class="chip">Vegan</span><span class="chip">Deals</span></div>
+      <article class="hero feature card"><p class="eyebrow">Chef pick</p><h1>Fire noodle bowl</h1><p>Charred corn, sesame greens, crispy shallot.</p><div class="price">$13.40 - 18 min</div></article>
+      <div class="section"><h3>Nearby favorites</h3><a href="#">Filter</a></div>
+      <article class="row card"><span class="mark">MS</span><div><h3>Miso Pepper Rice</h3><p>4.8 rating - 11 min away</p></div><span class="value">$11</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab active"><i></i><span>Eat</span></button><button class="tab"><i></i><span>Menu</span></button><button class="tab"><i></i><span>Cart</span></button><button class="tab"><i></i><span>Orders</span></button></nav>
+  </main>
+</body>
+</html>

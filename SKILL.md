@@ -38,6 +38,8 @@ Use this skill to research, design, implement, and package mobile app UI screens
 - `references/research-notes.md`: source-informed notes from platform guidance and UI inspiration research.
 - `cases/`: standalone HTML source code for each mobile app UI case.
 - `assets/previews/`: generated screenshots for README and gallery use.
+- `themes/`: five multi-screen app themes, each showing several functional screens for one product.
+- `assets/theme-previews/`: generated screenshots for every theme screen.
 - `scripts/render-previews.mjs`: dependency-free Chrome/Edge screenshot renderer.
 - `scripts/verify-assets.mjs`: checks that the case/source/preview set is complete.
 

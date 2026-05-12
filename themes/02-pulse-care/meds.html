@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pulse Care Meds</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#c5d4d8; --screen:#f6fbf8; --ink:#153134; --muted:#637777; --accent:#247a73; --accent-2:#d8764d; --card:#ffffff; --nav:rgba(255,255,255,.92); --font:"Segoe UI","Helvetica Neue",sans-serif; }
+    .dose { margin-top:14px; padding:15px; display:grid; grid-template-columns:98px 1fr; gap:14px; align-items:center; }
+    .pillbox { width:96px; height:96px; padding:8px; display:grid; grid-template-columns:repeat(2,1fr); gap:6px; border-radius:8px; background:#dfeceb; }
+    .pillbox span { border-radius:6px; background:#fff; border:1px solid rgba(21,49,52,.08); }
+    .pillbox span:nth-child(2) { background:#d8764d; }
+    .schedule { display:grid; gap:9px; }
+    .time { color:var(--accent); font-weight:900; }
+    .confirm { margin-top:12px; height:50px; width:100%; border:0; border-radius:8px; color:#f6fbf8; background:var(--accent); font-weight:900; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>8:24</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Pulse Care</p><h2>Medication</h2></div><button class="icon-btn" aria-label="Scan label"><svg viewBox="0 0 24 24"><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3"/><path d="M8 8h8v8H8z"/></svg></button></header>
+      <article class="dose card"><div class="pillbox" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div><p class="eyebrow">Current dose</p><h1>Take with food</h1><p>Vitamin D3, one capsule after breakfast.</p></div></article>
+      <button class="confirm">Mark as taken</button>
+      <div class="section"><h3>Today's schedule</h3><a href="#">History</a></div>
+      <div class="schedule">
+        <article class="row card"><span class="mark">AM</span><div><h3>Vitamin D3</h3><p>Breakfast window</p></div><span class="time">Now</span></article>
+        <article class="row card"><span class="mark" style="background:#d8764d">PM</span><div><h3>Magnesium</h3><p>After dinner</p></div><span class="time">7:30</span></article>
+        <article class="row card"><span class="mark" style="background:#9fbab7">RX</span><div><h3>Refill reminder</h3><p>6 doses remaining</p></div><span class="value">Fri</span></article>
+      </div>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Today</span></button><button class="tab active"><i></i><span>Meds</span></button><button class="tab"><i></i><span>Visits</span></button><button class="tab"><i></i><span>Records</span></button></nav>
+  </main>
+</body>
+</html>

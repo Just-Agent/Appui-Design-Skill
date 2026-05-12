@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bento Market Menu</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#d1d3bd; --screen:#fff8e8; --ink:#2b2319; --muted:#7c6d5b; --accent:#307943; --accent-2:#d94e2f; --card:#fffdf3; --nav:rgba(255,253,243,.92); --font:"Verdana","Segoe UI",sans-serif; }
+    .restaurant { padding:15px; background:#2b2319; color:#fff8e8; }
+    .restaurant p { color:rgba(255,248,232,.72); }
+    .thumb { width:64px; height:54px; border-radius:8px; background:radial-gradient(circle at 70% 26%,#fff8e8 0 8px,transparent 9px),linear-gradient(135deg,#d94e2f,#e4b250); }
+    .dish { display:grid; grid-template-columns:64px 1fr auto; gap:10px; align-items:center; padding:10px; }
+    .qty { width:34px; height:34px; border-radius:8px; display:grid; place-items:center; background:var(--ink); color:#fff8e8; font-weight:900; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>12:05</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><button class="icon-btn" aria-label="Back"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button><div><p class="eyebrow">Bento Market</p><h2>Ramen Garden</h2></div><button class="icon-btn" aria-label="Favorite"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg></button></header>
+      <article class="restaurant card"><p class="eyebrow">Open until 2 PM</p><h1>Spicy lunch set</h1><p>Free miso soup with every bowl today.</p></article>
+      <div class="chips" style="margin-top:12px"><span class="chip active">Popular</span><span class="chip">Bowls</span><span class="chip">Sides</span><span class="chip">Drinks</span></div>
+      <div class="section"><h3>Menu picks</h3><a href="#">All</a></div>
+      <div style="display:grid;gap:9px">
+        <article class="dish card"><div class="thumb"></div><div><h3>Fire noodle bowl</h3><p>Sesame greens, crispy shallot</p></div><span class="qty">+</span></article>
+        <article class="dish card"><div class="thumb" style="background:linear-gradient(135deg,#307943,#e4b250)"></div><div><h3>Ginger tofu rice</h3><p>Pickled cucumber, chili oil</p></div><span class="qty">+</span></article>
+        <article class="dish card"><div class="thumb" style="background:linear-gradient(135deg,#2b2319,#d94e2f)"></div><div><h3>Charred corn side</h3><p>Lime butter and furikake</p></div><span class="qty">+</span></article>
+      </div>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Eat</span></button><button class="tab active"><i></i><span>Menu</span></button><button class="tab"><i></i><span>Cart</span></button><button class="tab"><i></i><span>Orders</span></button></nav>
+  </main>
+</body>
+</html>

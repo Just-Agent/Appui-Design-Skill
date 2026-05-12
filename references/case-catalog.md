@@ -1,6 +1,6 @@
 # Case Catalog
 
-This repository includes ten original mobile app UI examples. Each case has standalone source in `cases/` and a generated screenshot in `assets/previews/`.
+This repository includes ten original single-screen mobile app UI examples and five multi-screen theme suites. Each UI has source code and a generated screenshot.
 
 | # | Case | Pattern | Source | Preview |
 |---|---|---|---|---|
@@ -22,5 +22,16 @@ This repository includes ten original mobile app UI examples. Each case has stan
 - Metric cards, timelines, lists, and detail summaries.
 - Progress, alerts, statuses, and secondary state indicators.
 - Domain-specific palettes, density, typography, and action hierarchy.
+- Multi-screen continuity across one app: home, transaction, analytics, checkout, editor, visit, pass, and schedule flows.
 
 Use these cases as remixable starting points. Keep the structure, adapt the content model, and rebuild the visual language around the user's product.
+
+## Multi-Screen Themes
+
+| Theme | Screens | Source Pattern | Preview Pattern |
+|---|---|---|---|
+| Aurora Bank | Home, transfer, insights | `themes/01-aurora-bank/*.html` | `assets/theme-previews/01-aurora-bank-*.png` |
+| Pulse Care | Overview, medication, visit | `themes/02-pulse-care/*.html` | `assets/theme-previews/02-pulse-care-*.png` |
+| Nomad Trip | Discover, itinerary, pass | `themes/03-nomad-trip/*.html` | `assets/theme-previews/03-nomad-trip-*.png` |
+| Bento Market | Discover, menu, checkout | `themes/04-bento-market/*.html` | `assets/theme-previews/04-bento-market-*.png` |
+| Frame Studio | Projects, editor, analytics | `themes/05-frame-studio/*.html` | `assets/theme-previews/05-frame-studio-*.png` |

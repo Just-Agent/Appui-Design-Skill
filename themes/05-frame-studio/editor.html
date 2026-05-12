@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frame Studio Editor</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#c8c2cc; --screen:#f2ece7; --ink:#161319; --muted:#756f77; --accent:#c13255; --accent-2:#326d7d; --card:#fff8f0; --nav:rgba(255,248,240,.9); --font:"Franklin Gothic Medium","Segoe UI",sans-serif; }
+    .canvas { margin-top:14px; height:312px; padding:14px; background:#161319; color:#f2ece7; position:relative; overflow:hidden; }
+    .frame { position:absolute; left:55px; right:55px; top:76px; height:160px; border:1px solid rgba(242,236,231,.28); border-radius:8px; background:linear-gradient(135deg,#c13255,#326d7d); }
+    .playhead { position:absolute; left:168px; top:58px; bottom:22px; width:2px; background:#e4b54a; }
+    .tools { margin-top:12px; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+    .tool { height:58px; padding:8px; display:grid; place-items:center; text-align:center; font-size:11px; font-weight:900; }
+    .timeline { padding:12px; display:grid; grid-template-columns:repeat(6,1fr); gap:5px; align-items:end; }
+    .timeline i { height:32px; border-radius:4px; background:var(--accent); }
+    .timeline i:nth-child(2n){height:54px;background:var(--accent-2)}.timeline i:nth-child(5){height:72px;background:#e4b54a}
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>21:16</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><button class="icon-btn" aria-label="Back"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button><div><p class="eyebrow">Frame Studio</p><h2>Edit teaser</h2></div><button class="icon-btn" aria-label="Export"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></button></header>
+      <article class="canvas card"><p class="eyebrow">Clip 03</p><h1>Neon cut</h1><div class="frame"></div><div class="playhead"></div></article>
+      <div class="tools"><article class="tool card">Trim</article><article class="tool card">Color</article><article class="tool card">Audio</article><article class="tool card">Text</article></div>
+      <div class="section"><h3>Timeline</h3><a href="#">Undo</a></div>
+      <article class="timeline card"><i></i><i></i><i></i><i></i><i></i><i></i></article>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Work</span></button><button class="tab active"><i></i><span>Edit</span></button><button class="tab"><i></i><span>Assets</span></button><button class="tab"><i></i><span>Stats</span></button></nav>
+  </main>
+</body>
+</html>

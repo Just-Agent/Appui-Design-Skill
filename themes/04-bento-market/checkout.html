@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bento Market Checkout</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#d1d3bd; --screen:#fff8e8; --ink:#2b2319; --muted:#7c6d5b; --accent:#307943; --accent-2:#d94e2f; --card:#fffdf3; --nav:rgba(255,253,243,.92); --font:"Verdana","Segoe UI",sans-serif; }
+    .summary { min-height:194px; background:#2b2319; }
+    .summary strong { display:block; margin-top:16px; font-size:42px; line-height:1; }
+    .step { padding:12px; }
+    .pay { margin-top:12px; height:50px; width:100%; border:0; border-radius:8px; background:var(--accent); color:#fff8e8; font-weight:900; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>12:08</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Bento Market</p><h2>Checkout</h2></div><button class="icon-btn" aria-label="Help"><svg viewBox="0 0 24 24"><path d="M9.1 9a3 3 0 1 1 5.8 1c-.7 1.2-2.2 1.7-2.6 3"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg></button></header>
+      <article class="hero summary card"><p class="eyebrow">Order total</p><strong>$24.80</strong><p>Two items arrive around 12:25.</p></article>
+      <div class="section"><h3>Order details</h3><a href="#">Edit</a></div>
+      <div style="display:grid;gap:9px">
+        <article class="row card"><span class="mark">2x</span><div><h3>Fire noodle bowl</h3><p>Extra chili crisp</p></div><span class="value">$26.80</span></article>
+        <article class="row card"><span class="mark" style="background:#d94e2f">CP</span><div><h3>Lunch reward</h3><p>Saved with market coupon</p></div><span class="value">-$2</span></article>
+      </div>
+      <div class="grid-2" style="margin-top:11px">
+        <article class="step card"><p class="eyebrow">Delivery</p><h3>North Pier</h3><p>Leave at desk</p></article>
+        <article class="step card"><p class="eyebrow">Payment</p><h3>Visa 1042</h3><p>Apple Pay ready</p></article>
+      </div>
+      <button class="pay">Place order</button>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Eat</span></button><button class="tab"><i></i><span>Menu</span></button><button class="tab active"><i></i><span>Cart</span></button><button class="tab"><i></i><span>Orders</span></button></nav>
+  </main>
+</body>
+</html>

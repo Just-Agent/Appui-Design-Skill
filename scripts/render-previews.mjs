@@ -7,6 +7,8 @@ import os from "node:os";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const casesDir = path.join(root, "cases");
 const previewsDir = path.join(root, "assets", "previews");
+const themesDir = path.join(root, "themes");
+const themePreviewsDir = path.join(root, "assets", "theme-previews");
 
 const browserCandidates = [
   process.env.CHROME_PATH,
@@ -29,6 +31,7 @@ if (!browser) {
 }
 
 mkdirSync(previewsDir, { recursive: true });
+mkdirSync(themePreviewsDir, { recursive: true });
 
 const cases = readdirSync(casesDir)
   .filter((entry) => statSync(path.join(casesDir, entry)).isDirectory())
@@ -40,13 +43,39 @@ if (cases.length === 0) {
   process.exit(1);
 }
 
-for (const caseName of cases) {
-  const input = path.join(casesDir, caseName, "index.html");
-  const output = path.join(previewsDir, `${caseName}.png`);
-  const profile = path.join(os.tmpdir(), `appui-design-skill-${caseName}`);
+const targets = cases.map((caseName) => ({
+  id: caseName,
+  input: path.join(casesDir, caseName, "index.html"),
+  output: path.join(previewsDir, `${caseName}.png`)
+}));
 
-  if (!existsSync(input)) {
-    console.error(`Missing source: ${input}`);
+if (existsSync(themesDir)) {
+  const themes = readdirSync(themesDir)
+    .filter((entry) => statSync(path.join(themesDir, entry)).isDirectory())
+    .filter((entry) => /^\d{2}-/.test(entry))
+    .sort();
+
+  for (const themeName of themes) {
+    const screenFiles = readdirSync(path.join(themesDir, themeName))
+      .filter((entry) => entry.endsWith(".html"))
+      .sort();
+
+    for (const screenFile of screenFiles) {
+      const screenName = path.basename(screenFile, ".html");
+      targets.push({
+        id: `${themeName}-${screenName}`,
+        input: path.join(themesDir, themeName, screenFile),
+        output: path.join(themePreviewsDir, `${themeName}-${screenName}.png`)
+      });
+    }
+  }
+}
+
+for (const target of targets) {
+  const profile = path.join(os.tmpdir(), `appui-design-skill-${target.id}`);
+
+  if (!existsSync(target.input)) {
+    console.error(`Missing source: ${target.input}`);
     process.exit(1);
   }
 
@@ -62,18 +91,18 @@ for (const caseName of cases) {
     "--virtual-time-budget=1800",
     "--window-size=430,932",
     `--user-data-dir=${profile}`,
-    `--screenshot=${output}`,
-    pathToFileURL(input).href
+    `--screenshot=${target.output}`,
+    pathToFileURL(target.input).href
   ];
 
   const result = spawnSync(browser, args, { encoding: "utf8" });
   rmSync(profile, { recursive: true, force: true });
 
   if (result.status !== 0) {
-    console.error(`Screenshot failed for ${caseName}`);
+    console.error(`Screenshot failed for ${target.id}`);
     console.error(result.stderr || result.stdout);
     process.exit(result.status || 1);
   }
 
-  console.log(`Rendered ${path.relative(root, output)}`);
+  console.log(`Rendered ${path.relative(root, target.output)}`);
 }

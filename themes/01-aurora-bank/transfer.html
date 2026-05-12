@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurora Bank Transfer</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#bdc8c0; --screen:#f5efe3; --ink:#11231c; --muted:#677066; --accent:#167a5a; --accent-2:#d49a37; --card:#fffaf0; --nav:rgba(255,250,240,.92); --font:"Segoe UI Variable","Segoe UI",sans-serif; }
+    .amount { margin-top:14px; padding:18px; text-align:center; background:#11231c; color:#f5efe3; }
+    .amount strong { display:block; font-size:50px; line-height:1; }
+    .amount p { color:rgba(245,239,227,.72); }
+    .recipient { margin-top:12px; padding:12px; display:grid; grid-template-columns:50px 1fr auto; gap:11px; align-items:center; }
+    .keypad { margin-top:12px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .key { height:54px; border:1px solid var(--line); border-radius:8px; display:grid; place-items:center; background:rgba(255,255,255,.64); font-size:20px; font-weight:900; }
+    .send { margin-top:12px; height:50px; border:0; border-radius:8px; width:100%; color:#f5efe3; background:var(--accent); font-weight:900; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>9:42</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><button class="icon-btn" aria-label="Back"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button><div><p class="eyebrow">Aurora Bank</p><h2>Send money</h2></div><button class="icon-btn" aria-label="Security"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></button></header>
+      <article class="amount card"><p class="eyebrow">Transfer amount</p><strong>$480</strong><p>From Everyday Checking</p></article>
+      <article class="recipient card"><span class="mark">ML</span><div><h3>Mina Lee</h3><p>Rent split - instant transfer</p></div><span class="value">Fee $0</span></article>
+      <div class="section"><h3>Funding source</h3><a href="#">Change</a></div>
+      <article class="row card"><span class="mark" style="background:#d49a37">EV</span><div><h3>Everyday Checking</h3><p>$12,840 available</p></div><span class="value">Active</span></article>
+      <div class="keypad" aria-label="Amount keypad"><span class="key">1</span><span class="key">2</span><span class="key">3</span><span class="key">4</span><span class="key">5</span><span class="key">6</span><span class="key">7</span><span class="key">8</span><span class="key">9</span></div>
+      <button class="send">Review transfer</button>
+    </section>
+    <nav class="tabbar"><button class="tab"><i></i><span>Home</span></button><button class="tab active"><i></i><span>Pay</span></button><button class="tab"><i></i><span>Insights</span></button><button class="tab"><i></i><span>Cards</span></button></nav>
+  </main>
+</body>
+</html>

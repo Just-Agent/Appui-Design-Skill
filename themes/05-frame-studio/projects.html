@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frame Studio Projects</title>
+  <link rel="stylesheet" href="../shared/theme-ui.css">
+  <style>
+    :root { --page:#c8c2cc; --screen:#f2ece7; --ink:#161319; --muted:#756f77; --accent:#c13255; --accent-2:#326d7d; --card:#fff8f0; --nav:rgba(255,248,240,.9); --font:"Franklin Gothic Medium","Segoe UI",sans-serif; }
+    .studio { min-height:238px; background:#161319; }
+    .studio::after { content:""; position:absolute; right:-34px; bottom:-36px; width:178px; height:178px; border-radius:50%; background:repeating-radial-gradient(circle,#c13255 0 12px,#326d7d 12px 22px,#e4b54a 22px 31px); box-shadow:-18px 18px 34px rgba(0,0,0,.28); }
+    .project { padding:12px; min-height:104px; display:grid; align-content:space-between; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>21:10</span><span class="icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+    <section class="app">
+      <header class="top"><div><p class="eyebrow">Frame Studio</p><h2>Creator desk</h2></div><button class="icon-btn" aria-label="New project"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></header>
+      <article class="hero studio card"><p class="eyebrow">Active project</p><h1>Neon Harbor launch</h1><p>Short video, album art, and caption pack due Friday.</p></article>
+      <div class="section"><h3>Project boards</h3><a href="#">Sort</a></div>
+      <div class="grid-2">
+        <article class="project card"><p class="eyebrow">Video</p><h3>15 sec teaser</h3><p>7 clips ready</p></article>
+        <article class="project card"><p class="eyebrow">Design</p><h3>Cover stack</h3><p>2 variants</p></article>
+      </div>
+      <article class="row card" style="margin-top:11px"><span class="mark">BR</span><div><h3>Brand review</h3><p>Client commented on intro frame.</p></div><span class="value">2 notes</span></article>
+    </section>
+    <nav class="tabbar"><button class="tab active"><i></i><span>Work</span></button><button class="tab"><i></i><span>Edit</span></button><button class="tab"><i></i><span>Assets</span></button><button class="tab"><i></i><span>Stats</span></button></nav>
+  </main>
+</body>
+</html>
