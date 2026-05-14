@@ -2,6 +2,8 @@
 
 This repository includes ten original single-screen mobile app UI examples and five multi-screen theme suites. Each UI has source code and a generated screenshot.
 
+For machine-readable discovery, use `assets/ui-catalog.json`; it lists every title, source path, preview path, and theme grouping.
+
 | # | Case | Pattern | Source | Preview |
 |---|---|---|---|---|
 | 01 | Finance Command | Personal finance dashboard with transaction triage | `cases/01-finance-command/index.html` | `assets/previews/01-finance-command.png` |

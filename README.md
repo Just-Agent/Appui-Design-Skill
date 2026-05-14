@@ -8,6 +8,7 @@
 ![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111?style=flat-square)
 ![Single Cases](https://img.shields.io/badge/Single%20Cases-10-1f6f56?style=flat-square)
 ![Theme Screens](https://img.shields.io/badge/Theme%20Screens-15-c13255?style=flat-square)
+![Version](https://img.shields.io/badge/Version-1.1.0-326d7d?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-HTML%2FCSS-c98d35?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
@@ -29,6 +30,7 @@ This repository is more than a prompt note. It is a complete mobile UI design sk
 | Design playbook | `references/app-ui-playbook.md` |
 | 10 single-screen app UI cases | `cases/*/index.html` and `assets/previews/*.png` |
 | 5 multi-screen app themes | `themes/*/*.html` and `assets/theme-previews/*.png` |
+| Machine-readable UI catalog | `assets/ui-catalog.json` |
 | Screenshot generation | `scripts/render-previews.mjs` |
 | Source-preview verification | `scripts/verify-assets.mjs` |
 
@@ -116,6 +118,20 @@ Use $appui-design-skill to design a finance app dashboard with screenshots and s
 Use $appui-design-skill to create a multi-screen mobile app theme for a travel planner.
 ```
 
+## Local Install
+
+From this repository, install or refresh the local Codex skill:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/install-local.ps1
+```
+
+Default install target:
+
+```text
+C:\Users\harzva\.codex\skills\appui-design-skill
+```
+
 ## Regenerate And Verify
 
 The preview images are generated from the HTML source using installed Chrome or Edge. No npm dependencies are required.
@@ -132,6 +148,7 @@ Current verification target:
 | Single-screen cases | 10 |
 | Multi-screen theme screens | 15 |
 | Total rendered UI previews | 25 |
+| Catalog entries | 25 |
 
 ## Repository Map
 
@@ -151,8 +168,10 @@ Appui-Design-Skill/
 │  └─ 01-aurora-bank ... 05-frame-studio/
 ├─ assets/
 │  ├─ previews/
-│  └─ theme-previews/
+│  ├─ theme-previews/
+│  └─ ui-catalog.json
 └─ scripts/
+   ├─ install-local.ps1
    ├─ render-previews.mjs
    └─ verify-assets.mjs
 ```

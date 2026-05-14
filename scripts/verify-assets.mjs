@@ -7,6 +7,7 @@ const casesDir = path.join(root, "cases");
 const previewsDir = path.join(root, "assets", "previews");
 const themesDir = path.join(root, "themes");
 const themePreviewsDir = path.join(root, "assets", "theme-previews");
+const catalogPath = path.join(root, "assets", "ui-catalog.json");
 
 function readPngSize(file) {
   const buffer = readFileSync(file);
@@ -111,9 +112,75 @@ if (!existsSync(themesDir)) {
   }
 }
 
+if (!existsSync(catalogPath)) {
+  errors.push("Missing catalog: assets/ui-catalog.json");
+} else {
+  try {
+    const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
+    const singleCases = Array.isArray(catalog.singleCases) ? catalog.singleCases : [];
+    const themeSuites = Array.isArray(catalog.themeSuites) ? catalog.themeSuites : [];
+    const themeScreenCount = themeSuites.reduce((total, theme) => {
+      return total + (Array.isArray(theme.screens) ? theme.screens.length : 0);
+    }, 0);
+
+    if (catalog.version !== "1.1.0") {
+      errors.push(`Catalog version should be 1.1.0, found ${catalog.version || "(missing)"}`);
+    }
+
+    if (singleCases.length !== 10) {
+      errors.push(`Catalog should list 10 single cases, found ${singleCases.length}`);
+    }
+
+    if (themeSuites.length !== 5) {
+      errors.push(`Catalog should list 5 theme suites, found ${themeSuites.length}`);
+    }
+
+    if (themeScreenCount !== 15) {
+      errors.push(`Catalog should list 15 theme screens, found ${themeScreenCount}`);
+    }
+
+    for (const item of singleCases) {
+      if (!item.id || !item.source || !item.preview) {
+        errors.push(`Catalog single case is missing id/source/preview: ${JSON.stringify(item)}`);
+        continue;
+      }
+      if (!existsSync(path.join(root, item.source))) {
+        errors.push(`Catalog source missing: ${item.source}`);
+      }
+      if (!existsSync(path.join(root, item.preview))) {
+        errors.push(`Catalog preview missing: ${item.preview}`);
+      }
+    }
+
+    for (const theme of themeSuites) {
+      if (!theme.id || !Array.isArray(theme.screens)) {
+        errors.push(`Catalog theme is missing id/screens: ${JSON.stringify(theme)}`);
+        continue;
+      }
+      if (theme.screens.length < 3) {
+        errors.push(`Catalog theme ${theme.id} should list at least 3 screens`);
+      }
+      for (const screen of theme.screens) {
+        if (!screen.name || !screen.source || !screen.preview) {
+          errors.push(`Catalog theme screen is missing name/source/preview: ${JSON.stringify(screen)}`);
+          continue;
+        }
+        if (!existsSync(path.join(root, screen.source))) {
+          errors.push(`Catalog source missing: ${screen.source}`);
+        }
+        if (!existsSync(path.join(root, screen.preview))) {
+          errors.push(`Catalog preview missing: ${screen.preview}`);
+        }
+      }
+    }
+  } catch (error) {
+    errors.push(`Invalid catalog JSON: ${error.message}`);
+  }
+}
+
 if (errors.length > 0) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
 
-console.log(`Verified ${cases.length} cases and ${verifiedPreviews - cases.length} theme screens with matching PNG previews.`);
+console.log(`Verified ${cases.length} cases, ${verifiedPreviews - cases.length} theme screens, and assets/ui-catalog.json.`);

@@ -1,10 +1,11 @@
 {
   "name": "appui-design-skill",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "A Codex skill and mobile app UI case library with screenshot-backed single-screen cases and multi-screen themes.",
   "type": "module",
   "scripts": {
+    "install:local": "powershell -ExecutionPolicy Bypass -File scripts/install-local.ps1",
     "previews": "node scripts/render-previews.mjs",
     "verify": "node scripts/verify-assets.mjs"
   }

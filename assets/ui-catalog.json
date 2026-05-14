@@ -1,0 +1,189 @@
+{
+  "version": "1.1.0",
+  "name": "appui-design-skill",
+  "summary": "Screenshot-backed mobile app UI source catalog.",
+  "singleCases": [
+    {
+      "id": "01-finance-command",
+      "title": "Finance Command",
+      "source": "cases/01-finance-command/index.html",
+      "preview": "assets/previews/01-finance-command.png",
+      "pattern": "Personal finance dashboard with spend review and cash flow"
+    },
+    {
+      "id": "02-wellness-rhythm",
+      "title": "Wellness Rhythm",
+      "source": "cases/02-wellness-rhythm/index.html",
+      "preview": "assets/previews/02-wellness-rhythm.png",
+      "pattern": "Mood check-in, habit recovery, and gentle coaching"
+    },
+    {
+      "id": "03-travel-scout",
+      "title": "Travel Scout",
+      "source": "cases/03-travel-scout/index.html",
+      "preview": "assets/previews/03-travel-scout.png",
+      "pattern": "Trip route, map context, and itinerary timeline"
+    },
+    {
+      "id": "04-food-market",
+      "title": "Food Market",
+      "source": "cases/04-food-market/index.html",
+      "preview": "assets/previews/04-food-market.png",
+      "pattern": "Restaurant discovery, search chips, and cart intent"
+    },
+    {
+      "id": "05-learning-lab",
+      "title": "Learning Lab",
+      "source": "cases/05-learning-lab/index.html",
+      "preview": "assets/previews/05-learning-lab.png",
+      "pattern": "Lesson progress, practice queue, and streak state"
+    },
+    {
+      "id": "06-music-studio",
+      "title": "Music Studio",
+      "source": "cases/06-music-studio/index.html",
+      "preview": "assets/previews/06-music-studio.png",
+      "pattern": "Player, waveform, and quick mix controls"
+    },
+    {
+      "id": "07-home-energy",
+      "title": "Home Energy",
+      "source": "cases/07-home-energy/index.html",
+      "preview": "assets/previews/07-home-energy.png",
+      "pattern": "Energy gauge, smart room controls, and grid price"
+    },
+    {
+      "id": "08-fashion-wardrobe",
+      "title": "Fashion Wardrobe",
+      "source": "cases/08-fashion-wardrobe/index.html",
+      "preview": "assets/previews/08-fashion-wardrobe.png",
+      "pattern": "Outfit planning, closet sourcing, and commerce hint"
+    },
+    {
+      "id": "09-medical-companion",
+      "title": "Medical Companion",
+      "source": "cases/09-medical-companion/index.html",
+      "preview": "assets/previews/09-medical-companion.png",
+      "pattern": "Care plan, vitals, medication, and appointment state"
+    },
+    {
+      "id": "10-social-events",
+      "title": "Social Events",
+      "source": "cases/10-social-events/index.html",
+      "preview": "assets/previews/10-social-events.png",
+      "pattern": "Event discovery, date filtering, and RSVP action"
+    }
+  ],
+  "themeSuites": [
+    {
+      "id": "01-aurora-bank",
+      "title": "Aurora Bank",
+      "domain": "Consumer finance",
+      "screens": [
+        {
+          "name": "Home",
+          "source": "themes/01-aurora-bank/home.html",
+          "preview": "assets/theme-previews/01-aurora-bank-home.png"
+        },
+        {
+          "name": "Transfer",
+          "source": "themes/01-aurora-bank/transfer.html",
+          "preview": "assets/theme-previews/01-aurora-bank-transfer.png"
+        },
+        {
+          "name": "Insights",
+          "source": "themes/01-aurora-bank/insights.html",
+          "preview": "assets/theme-previews/01-aurora-bank-insights.png"
+        }
+      ]
+    },
+    {
+      "id": "02-pulse-care",
+      "title": "Pulse Care",
+      "domain": "Healthcare companion",
+      "screens": [
+        {
+          "name": "Overview",
+          "source": "themes/02-pulse-care/overview.html",
+          "preview": "assets/theme-previews/02-pulse-care-overview.png"
+        },
+        {
+          "name": "Medication",
+          "source": "themes/02-pulse-care/meds.html",
+          "preview": "assets/theme-previews/02-pulse-care-meds.png"
+        },
+        {
+          "name": "Visit",
+          "source": "themes/02-pulse-care/visit.html",
+          "preview": "assets/theme-previews/02-pulse-care-visit.png"
+        }
+      ]
+    },
+    {
+      "id": "03-nomad-trip",
+      "title": "Nomad Trip",
+      "domain": "Travel planning",
+      "screens": [
+        {
+          "name": "Discover",
+          "source": "themes/03-nomad-trip/discover.html",
+          "preview": "assets/theme-previews/03-nomad-trip-discover.png"
+        },
+        {
+          "name": "Itinerary",
+          "source": "themes/03-nomad-trip/itinerary.html",
+          "preview": "assets/theme-previews/03-nomad-trip-itinerary.png"
+        },
+        {
+          "name": "Pass",
+          "source": "themes/03-nomad-trip/pass.html",
+          "preview": "assets/theme-previews/03-nomad-trip-pass.png"
+        }
+      ]
+    },
+    {
+      "id": "04-bento-market",
+      "title": "Bento Market",
+      "domain": "Food delivery",
+      "screens": [
+        {
+          "name": "Discover",
+          "source": "themes/04-bento-market/discover.html",
+          "preview": "assets/theme-previews/04-bento-market-discover.png"
+        },
+        {
+          "name": "Menu",
+          "source": "themes/04-bento-market/menu.html",
+          "preview": "assets/theme-previews/04-bento-market-menu.png"
+        },
+        {
+          "name": "Checkout",
+          "source": "themes/04-bento-market/checkout.html",
+          "preview": "assets/theme-previews/04-bento-market-checkout.png"
+        }
+      ]
+    },
+    {
+      "id": "05-frame-studio",
+      "title": "Frame Studio",
+      "domain": "Creator workflow",
+      "screens": [
+        {
+          "name": "Projects",
+          "source": "themes/05-frame-studio/projects.html",
+          "preview": "assets/theme-previews/05-frame-studio-projects.png"
+        },
+        {
+          "name": "Editor",
+          "source": "themes/05-frame-studio/editor.html",
+          "preview": "assets/theme-previews/05-frame-studio-editor.png"
+        },
+        {
+          "name": "Analytics",
+          "source": "themes/05-frame-studio/analytics.html",
+          "preview": "assets/theme-previews/05-frame-studio-analytics.png"
+        }
+      ]
+    }
+  ]
+}
